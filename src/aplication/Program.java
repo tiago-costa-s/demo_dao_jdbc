@@ -1,5 +1,7 @@
 package aplication;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -24,11 +26,27 @@ public class Program {
 			System.out.println(obj);
 		}
 
-		System.out.println("\n==== TEST 3: seller finAll ====");		
+		System.out.println("\n==== TEST 3: seller finAll ====");
 		list = sellerDao.findAll();
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
+
+		System.out.println("\n==== TEST 4: seller insert ====");
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			java.util.Date utilDate = sdf.parse("22/07/2025");
+			java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+
+			Seller newSeller = new Seller(null, "greg", "greg@gmail.com", sqlDate, 4000.0, department);
+			sellerDao.insert(newSeller);
+			System.out.println("Inserted! New id = " + newSeller.getId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
