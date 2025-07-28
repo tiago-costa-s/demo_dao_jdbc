@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
+import model.dao.impl.DepartmentDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -60,6 +62,12 @@ public class Program {
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
 		System.out.println("Delete completed");
+
+		System.out.println("\n==== TEST 7: department insert ====");
+		Department newDepartment = new Department(null, "SACOLÃO ABC");
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+		departmentDao.insert(newDepartment);
+		System.out.println("Inserted! New id = " + newDepartment.getId());
 		sc.close();
 
 	}
