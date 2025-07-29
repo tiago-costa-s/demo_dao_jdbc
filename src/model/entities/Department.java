@@ -36,7 +36,7 @@ public class Department implements Serializable {
 
 	@Override
 	public String toString() {
-		return "[id=" + id + ", name=" + name + "]";
+		return "Department [id=" + id + ", name=" + name + "]";
 	}
 
 	@Override
@@ -56,4 +56,5 @@ public class Department implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
+	
 }
