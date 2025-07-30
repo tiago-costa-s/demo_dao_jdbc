@@ -73,13 +73,20 @@ public class Program {
 //		Department department = departmentDao.findById(1);
 //		System.out.println(department);
 
-		System.out.println("\n==== TEST 9: department findAll ====");
-		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
-		List<Department> list = departmentDao.findAll();
+//		System.out.println("\n==== TEST 9: department findAll ====");
+//		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+//		List<Department> list = departmentDao.findAll();
+//
+//		for (Department d : list) {
+//			System.out.println(d);
+//		}
 
-		for (Department d : list) {
-			System.out.println(d);
-		}
+		System.out.println("\n==== TEST 10: department update ====");
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+		Department department = departmentDao.findById(24);
+		department.setName("Games");
+		departmentDao.update(department);
+		System.out.println("Update completed!");
 
 		sc.close();
 	}
