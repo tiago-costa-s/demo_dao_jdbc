@@ -68,12 +68,19 @@ public class Program {
 //		departmentDao.insert(newDepartment);
 //		System.out.println("Inserted! New id = " + newDepartment.getId());
 
+//		System.out.println("\n==== TEST 8: department findById ====");
+//		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+//		Department department = departmentDao.findById(1);
+//		System.out.println(department);
 
-		System.out.println("\n==== TEST 8: department findById ====");
+		System.out.println("\n==== TEST 9: department findAll ====");
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
-		Department department = departmentDao.findById(1);
-		System.out.println(department);
-		
+		List<Department> list = departmentDao.findAll();
+
+		for (Department d : list) {
+			System.out.println(d);
+		}
+
 		sc.close();
 	}
 
