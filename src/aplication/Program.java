@@ -81,13 +81,17 @@ public class Program {
 //			System.out.println(d);
 //		}
 
-		System.out.println("\n==== TEST 10: department update ====");
-		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
-		Department department = departmentDao.findById(24);
-		department.setName("Games");
-		departmentDao.update(department);
-		System.out.println("Update completed!");
+//		System.out.println("\n==== TEST 10: department update ====");
+//		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+//		Department department = departmentDao.findById(24);
+//		department.setName("Games");
+//		departmentDao.update(department);
+//		System.out.println("Update completed!");
 
+		System.out.println("\n==== TEST 11: department Delete ====");
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+		departmentDao.deleteById(3);
+		System.out.println("Delete completed!");
 		sc.close();
 	}
 
